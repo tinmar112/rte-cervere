@@ -1,6 +1,6 @@
 # Application _Cervère_
 
-Code source : 
+Code source : https://github.com/tinmar112/rte-cervere
 
 ## Introduction
 
@@ -200,5 +200,6 @@ d'un intervalle (par ex. lorsque les mesures présentent un trou dans le temps).
 __Alternative__ : Compléter/remplacer cette option par ```limit = 3 ou 4```. 
 (Mais alors des NaN risquent de subsiter en cas d'interruptions
 courtes, et des dates correspondantes d'être supprimées par le dropna...)
+
 
 Se référer à la doc pandas : https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.interpolate.html
