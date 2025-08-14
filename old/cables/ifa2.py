@@ -6,7 +6,9 @@ from old.functions.logging_config import logger
 from old.cables.cable import Cable
 
 class Ifa2(Cable):
-    """Extracteur des câbles Courseulles L1/L2
+    """PAS ENCORE EN SERVICE, IL FAUT RÉARRANGER LES FICHIERS PAR FOLDERS DU TYPE LIT-Negative/-Positive POUR COMPATIBILITÉ
+    
+    Extracteur des câbles IFA2
 
     Méthodes privées:
         Courseulles.__read_data(chemin)
@@ -45,4 +47,5 @@ class Ifa2(Cable):
     def _loop(self) -> None:
         for year in os.listdir(self._dossier):
             for file in os.listdir(self._dossier + '/' + year):
+
                 self.__read_data(chemin = self._dossier + '/' + file)
