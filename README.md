@@ -151,7 +151,7 @@ les chemins par défaut, on lancera :
 ou plus simplement :
 ```% python main.py BOUTRL61TRANS```
   
->[!IMPORTANT] 
+>[!TIP] 
 >Lorsqu'un nouveau câble est ajouté, son
 >dossier ```[SAVE]``` est vide. On peut alors gagner du 
 >temps sur l'initialisation de la mise à jour 
@@ -182,17 +182,19 @@ horaire avec ```self._tz = pytz.timezone('fuseau')```
 Celle-ci prend en argument un fichier à lire et le transforme
 en DataFrame (colonnes ```['time','KP','temprature]``` -
  ```time``` est souvent une valeur unique dans un même fichier)
-et la rajoute à la liste ```self._data```.  
-__Respecter impérativement les types pour chaque colonne :__
-  - ```time```:```datetime64[ns, UTC]``` (ou un autre fuseau,
-  tel que ```datetime64[ns, CET]```)
-  - ```KP```: ```float32```
-  - ```temperature```:```float32```
+et la rajoute à la liste ```self._data```.
+
+>[!WARNING]
+>__Respecter impérativement les types pour chaque colonne :__
+>  - ```time```:```datetime64[ns, UTC]``` (ou un autre fuseau,
+>  tel que ```datetime64[ns, CET]```)
+>  - ```KP```: ```float32```
+>  - ```temperature```:```float32```
   
 Si le rangement des données n'est pas consistant, il
 faut en plus modifier la méthode ```Cable._loop()```.
   
->[!WARNING]  
+>[!CAUTION]  
 >La première donnée de chaque mois (00:00:00 UTC le 1er du mois) est manquante en raison
 >du paramètre ```limit_area='inside'``` de la méthode ```df.interpolate()``` dans ```Cable._interpolate()```.
 >
@@ -203,6 +205,7 @@ faut en plus modifier la méthode ```Cable._loop()```.
 >courtes, et des dates correspondantes d'être supprimées par le dropna...)
 >
 >Se référer à la doc pandas : https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.interpolate.html
+
 
 
 
