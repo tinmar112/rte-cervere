@@ -49,3 +49,4 @@ class Ifa2(Cable):
             for file in os.listdir(self._dossier + '/' + year):
 
                 self.__read_data(chemin = self._dossier + '/' + file)
+
