@@ -205,3 +205,4 @@ courtes, et des dates correspondantes d'être supprimées par le dropna...)
 
 Se référer à la doc pandas : https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.interpolate.html
 
+
