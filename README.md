@@ -192,18 +192,18 @@ __Respecter impérativement les types pour chaque colonne :__
 Si le rangement des données n'est pas consistant, il
 faut en plus modifier la méthode ```Cable._loop()```.
   
-[!WARNING]  
-La première donnée de chaque mois (00:00:00 UTC le 1er du mois) est manquante en raison
-du paramètre ```limit_area='inside'``` de la méthode ```df.interpolate()``` dans ```Cable._interpolate()```.
+>[!WARNING]  
+>La première donnée de chaque mois (00:00:00 UTC le 1er du mois) est manquante en raison
+>du paramètre ```limit_area='inside'``` de la méthode ```df.interpolate()``` dans ```Cable._interpolate()```.
+>
+>Cette option à été réglée ainsi pour éviter une extrapolation des valeurs disponibles à l'ensemble
+>d'un intervalle (par ex. lorsque les mesures présentent un trou dans le temps).  
+>__Alternative__ : Compléter/remplacer cette option par ```limit = 3 ou 4```. 
+>(Mais alors des NaN risquent de subsiter en cas d'interruptions
+>courtes, et des dates correspondantes d'être supprimées par le dropna...)
+>
+>Se référer à la doc pandas : https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.interpolate.html
 
-Cette option à été réglée ainsi pour éviter une extrapolation des valeurs disponibles à l'ensemble
-d'un intervalle (par ex. lorsque les mesures présentent un trou dans le temps).  
-__Alternative__ : Compléter/remplacer cette option par ```limit = 3 ou 4```. 
-(Mais alors des NaN risquent de subsiter en cas d'interruptions
-courtes, et des dates correspondantes d'être supprimées par le dropna...)
-
-
-Se référer à la doc pandas : https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.interpolate.html
 
 
 
