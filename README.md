@@ -150,21 +150,21 @@ les chemins par défaut, on lancera :
   
 ou plus simplement :
 ```% python main.py BOUTRL61TRANS```
-
-`[!IMPORTANT] 
-Lorsqu'un nouveau câble est ajouté, son
-dossier ```[SAVE]``` est vide. On peut alors gagner du 
-temps sur l'initialisation de la mise à jour 
-en configurant manuellement
-le mois de départ de l'extraction dans la fonction
-```functions.latest.latest()```.  
-Par exemple, il peut
-être utile de régler la variable locale
-```latest_mo = pd.Timestamp(year=2025, month=6, day=1, tz=tz)```
-pour un parc éolien
-mis en service en juin 2025. Autrement, le programme
-cherchera à parcourir des mois sans donnée : ça marche,
-mais ce sera plus long.`
+  
+>[!IMPORTANT] 
+>Lorsqu'un nouveau câble est ajouté, son
+>dossier ```[SAVE]``` est vide. On peut alors gagner du 
+>temps sur l'initialisation de la mise à jour 
+>en configurant manuellement
+>le mois de départ de l'extraction dans la fonction
+>```functions.latest.latest()```.  
+>Par exemple, il peut
+>être utile de régler la variable locale
+>```latest_mo = pd.Timestamp(year=2025, month=6, day=1, tz=tz)```
+>pour un parc éolien
+>mis en service en juin 2025. Autrement, le programme
+>cherchera à parcourir des mois sans donnée : ça marche,
+>mais ce sera plus long.
 
 ### Entretien de l'application
 
@@ -204,5 +204,6 @@ courtes, et des dates correspondantes d'être supprimées par le dropna...)
 
 
 Se référer à la doc pandas : https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.interpolate.html
+
 
 
